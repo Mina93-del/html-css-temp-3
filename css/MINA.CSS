@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    --webkit-box-sizing: border-box;
+    --moz-box-sizing: border-box;
+    --section-padding: 100px;
+}
+
+html {
+    scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --section-background: #ececec;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width : 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width : 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width : 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* header */
+.header {
+    background-color: white;
+    position: relative;
+    justify-content: space-between;
+    --webkit-box-shadow: 0 0 10px #ddd;
+    --moz-box-shadow: 0 0 10px #ddd
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.header .container .logo {
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 26px;
+    height: 73px;
+    /*عشان يفضل طوله ثابت مهما حصل تغيير قدام */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width :767px) {
+    .header .container .logo {
+        width: 100%;
+        /* خليناها بعرض الشاشة عشان انا عامل wrap فوق فا اللى جمبه هينزل */
+        height: 50px;
+    }
+
+}
+
+.header .container .main-nav {
+    display: flex;
+}
+
+@media(max-width :767px) {
+    .header .container .main-nav {
+        margin: auto;
+    }
+}
+
+.header .container .main-nav>li>a {
+    padding: 0 30px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 73px;
+    color: black;
+    position: relative;
+    transition: var(--main-transition);
+    overflow: hidden;
+    font-size: 20px;
+
+}
+
+@media(max-width :767px) {
+    .header .container .main-nav>li a {
+        font-size: 14px;
+        padding: 10px;
+        height: 40px;
+    }
+}
+
+.header .container .main-nav>li>a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    /*بطلع الخط برا الشكل عشان لما اعمله hovr يرجع تدريجى ويبقا على الشكل */
+    transition: var(--main-transition);
+}
+
+.header .container .main-nav>li>a:hover {
+    color: var(--main-color);
+    background-color: #fafafa;
+
+}
+
+.header .container .main-nav>li>a:hover::before {
+    left: 0;
+}
+
+.landing {
+    position: relative;
+
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    z-index: -1;
+    transform: skewY(-6deg);
+    transform-origin: top left;
+}
+
+.landing .container {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 72px);
+    padding-bottom: 120px;
+}
+
+.landing .container .text-box {
+    flex: 1;
+}
+@media (max-width : 991px) {
+.landing .container .text-box {
+text-align: center;  
+  }
+}
+.landing .container .text-box h1 {
+    font-size: 40px;
+    margin: 0;
+    letter-spacing: -2px;
+}
+@media (max-width : 767px) {
+.landing .container .text-box h1{
+    font-size: 28px;
+  }
+}
+.landing .container .text-box p {
+    font-size: 23px;
+    margin: 5px 0 0;
+    line-height: 1.7;
+    color: #666;
+    max-width: 500px;
+}
+@media (max-width : 767px) {
+.landing .container .text-box p{
+    font-size: 18px;
+  }
+}
+@media (max-width : 991px) {
+.landing .container .text-box p{
+    margin: 10px auto;
+  }
+}
+
+.landing .image img {
+    position: relative;
+    width: 600px;
+animation: up-and-down 5s linear infinite;}
+
+@media (max-width : 991px) {
+    .landing .image {
+        display: none;
+    }
+}
+
+.landing .go-down {
+    color: var(--main-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: var(--main-transition);
+}
+
+.landing .go-down:hover {
+    color: var(--main-color-alt);
+}
+.landing .go-down i {
+    animation: bouncing 1.5s infinite;
+}
+/* animation */
+@keyframes up-and-down {
+0% , 100% {
+    top: 0; 
+}
+50% {
+   top: -50px; 
+}
+}
+@keyframes bouncing {
+0% , 10% ,20% , 50% , 80% , 100% {
+transform: translateY(0);}
+40% , 60% {
+transform: translateY(-15px);}
+}
