@@ -591,3 +591,5 @@ a {
     max-width: 100%;
     transition: var(--main-transition);
 }
+
+.gallery img {}
