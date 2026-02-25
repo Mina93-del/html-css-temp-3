@@ -592,4 +592,204 @@ a {
     transition: var(--main-transition);
 }
 
-.gallery img {}
+/* features */
+.features {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    background-color: white;
+}
+
+.features .container {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.features .box {
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.features .box .image-hold {
+    position: relative;
+    overflow: hidden;
+}
+
+.features .box .image-hold::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.features .box .image-hold::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0px 0px 170px 500px;
+    border-color: transparent transparent white transparent;
+    transition: var(--main-transition);
+}
+
+.features .box .image-hold:hover::after {
+    border-width: 170px 500px 170px 0;
+}
+
+.features img {
+    max-width: 100%;
+}
+
+.features .box h2 {
+    position: relative;
+    font-size: 40px;
+    margin: auto;
+    width: fit-content;
+}
+
+.features .box h2::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 5px;
+    bottom: -20px;
+    left: 15px;
+}
+
+.features .box p {
+    margin: 30px 0;
+    padding: 25px;
+    font-size: 20px;
+    color: #777;
+    line-height: 2;
+}
+
+.features .box a {
+    display: block;
+    border: 3px solid transparent;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 7px;
+    margin: 0 auto 30px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: var(--main-transition);
+}
+
+.features .quality .image-hold::before {
+
+    background-color: rgb(244, 64, 54, 0.6);
+}
+
+.features .quality h2::after {
+    background-color: #F44036;
+}
+
+/* ده معناه هقسم الشاشة نصين نص احمر ونص ابيض بس النص الابيض هيبقا طاغى عشان لما اعمل hover اخلى الاحمر اللى طاغى */
+.features .quality a {
+    color: #F44036;
+    border: 3px solid #f44036;
+    background: linear-gradient(to right, #f44036 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.features .box:hover a {
+    background-position: left bottom;
+    color: white;
+}
+
+.features .time .image-hold::before {
+
+    background-color: rgb(0, 150, 136, 0.6);
+}
+
+.features .time h2::after {
+    background-color: #009688;
+}
+
+/* ده معناه هقسم الشاشة نصين نص احمر ونص ابيض بس النص الابيض هيبقا طاغى عشان لما اعمل hover اخلى الاحمر اللى طاغى */
+.features .time a {
+    color: #009688;
+    border: 3px solid #009688;
+    background: linear-gradient(to right, #009688 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+.features .passion .image-hold::before {
+
+    background-color: rgb(3, 169, 244, 0.6);
+}
+
+.features .passion h2::after {
+    background-color: #03a9f4;
+}
+
+/* ده معناه هقسم الشاشة نصين نص احمر ونص ابيض بس النص الابيض هيبقا طاغى عشان لما اعمل hover اخلى الاحمر اللى طاغى */
+.features .passion a {
+    color: #03a9f4;
+    border: 3px solid #03a9f4;
+    background: linear-gradient(to right, #03a9f4 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+}
+
+/* testimonials */
+.Testimonials {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.Testimonials .container {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.Testimonials .container .test-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+
+}
+
+.Testimonials .container .test-content img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px;
+    top: -50px;
+    border: 10px solid var(--section-background);
+
+}
+
+.Testimonials .container .test-content h3 {
+    margin-bottom: 10px;
+}
+
+.Testimonials .container .test-content .title {
+    margin-bottom: 10px;
+    display: block;
+    color: #777;
+}
+
+.Testimonials .container .test-content .filled {
+    color: #ffc107;
+}
+
+.Testimonials .container .test-content p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #777;
+}
