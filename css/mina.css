@@ -793,3 +793,111 @@ a {
     line-height: 1.5;
     color: #777;
 }
+
+/* team-member */
+.Team-Member {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+}
+
+.Team-Member .container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.Team-Member .container .box-content {
+    position: relative;
+}
+
+.Team-Member .container .box-content::before,
+.Team-Member .container .box-content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.Team-Member .container .box-content::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+    background-color: #f3f3f3;
+}
+
+.Team-Member .container .box-content:hover::after {
+    width: calc(100% - 60px);
+
+}
+
+.Team-Member .container .box-content::after {
+    width: 0;
+    z-index: -1;
+    background-color: #e4e4e4;
+
+}
+
+.Team-Member .container .box-content .img-icon {
+    display: flex;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.Team-Member .container .box-content .img-icon .icons {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.Team-Member .container .box-content .img-icon .icons a {
+    display: flex;
+    width: 60px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Team-Member .container .box-content .img-icon .icons a:hover i {
+    color: var(--main-color);
+}
+
+.Team-Member .container .box-content .img-icon .icons i {
+    color: #777;
+    transition: var(--main-transition);
+
+}
+
+.Team-Member .container .box-content img {
+    width: calc(100% - 60px);
+    /*مكان رص الايقونات */
+    transition: var(--main-transition);
+    border-radius: 10px;
+}
+
+.Team-Member .box-content:hover img {
+    filter: grayscale(100%);
+}
+
+.Team-Member .box-content .text-box {
+    line-height: 1.5;
+    padding: 20px 80px;
+}
+
+.Team-Member .box-content .text-box h3 {
+    color: var(--main-color);
+    font-size: 22px;
+    transition: var(--main-transition);
+}
+
+.Team-Member .box-content .text-box {
+    margin-top: 10px;
+}
+
+.Team-Member .box-content:hover .text-box h3 {
+    color: #777;
+}
